@@ -1,9 +1,11 @@
 .Navbar {
-  width: 920px;
+  max-width: 920px;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin: 0 auto;
   justify-content: center;
+
+  margin: 0 auto;
 }
 
 .NavbarList {
@@ -11,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   column-gap: 30px;
 }
 
