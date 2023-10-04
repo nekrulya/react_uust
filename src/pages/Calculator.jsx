@@ -3,6 +3,13 @@ import CalcBtn from "../components/UI/CalcBtn/CalcBtn";
 
 const Calculator = () => {
   const [expression, setExpression] = useState("");
+  const calculate = (expression) => {
+    try {
+      setExpression(eval(expression));
+    } catch (e) {
+      setExpression('ERROR');
+    }
+  }
 
   return (
     <div className="calculator">
@@ -14,7 +21,7 @@ const Calculator = () => {
           onKeyDown={(event) => {
             console.log(event);
             if (event.key === "Enter") {
-              setExpression(eval(expression));
+              calculate(expression);
             }
           }}
         />
@@ -23,24 +30,32 @@ const Calculator = () => {
         <div className="btns_row">
           <CalcBtn
             value={"AC"}
+            style={{ backgroundColor: '#A5A5A5', color: '#000' }}
             onClick={(event) => {
               setExpression("");
             }}
           />
           <CalcBtn
             value={"+/-"}
+            style={{ backgroundColor: '#A5A5A5', color: '#000' }}
             onClick={(event) => {
               setExpression(Number(expression) * -1);
             }}
           />
           <CalcBtn
             value={"%"}
+            style={{ backgroundColor: '#A5A5A5', color: '#000' }}
             onClick={(event) => {
-              setExpression(eval(expression / 100));
+              try {
+                setExpression(eval(expression / 100));
+              } catch (e) {
+                setExpression('ERROR');
+              }
             }}
           />
           <CalcBtn
             value={"/"}
+            style={{ backgroundColor: '#F1A33B' }}
             onClick={(event) => {
               setExpression(expression + "/");
             }}
@@ -67,6 +82,7 @@ const Calculator = () => {
           />
           <CalcBtn
             value={"*"}
+            style={{ backgroundColor: '#F1A33B' }}
             onClick={(event) => {
               setExpression(expression + "*");
             }}
@@ -93,6 +109,7 @@ const Calculator = () => {
           />
           <CalcBtn
             value={"-"}
+            style={{ backgroundColor: '#F1A33B' }}
             onClick={(event) => {
               setExpression(expression + "-");
             }}
@@ -119,6 +136,7 @@ const Calculator = () => {
           />
           <CalcBtn
             value={"+"}
+            style={{ backgroundColor: '#F1A33B' }}
             onClick={(event) => {
               setExpression(expression + "+");
             }}
@@ -140,8 +158,9 @@ const Calculator = () => {
           />
           <CalcBtn
             value={"="}
+            style={{ backgroundColor: '#F1A33B' }}
             onClick={(event) => {
-              setExpression(eval(expression));
+              calculate(expression);
             }}
           />
         </div>
