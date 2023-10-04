@@ -2,13 +2,13 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/UI/Navbar/Navbar";
 
-const Slider = () => {
+const Layout = () => {
   return (
-    <div>
+    <div className="Layout">
       <Navbar />
       <Outlet />
     </div>
   );
 };
 
-export default Slider;
+export default Layout;
