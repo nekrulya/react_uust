@@ -215,3 +215,11 @@
   position: absolute;
   bottom: 0;
 }
+
+/* Tests */
+.answers li {
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
