@@ -1,11 +1,19 @@
 import React from "react";
 
-const Questions = ({ questions, choosedAnswers, setChoosedAnswers }) => {
+const Questions = ({
+  questions,
+  choosedAnswers,
+  cheatAnswers,
+  setChoosedAnswers,
+  setProgress,
+  checkAnswers,
+}) => {
   const addAnswer = (answer) => {
     let answers = choosedAnswers;
     answers[questions.question] = answer;
     setChoosedAnswers(answers);
-    console.log(answers);
+    setProgress(Object.keys(answers).length);
+    checkAnswers(cheatAnswers, choosedAnswers);
   };
 
   return (

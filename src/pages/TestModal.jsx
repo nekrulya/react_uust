@@ -8,6 +8,8 @@ const TestModal = () => {
     question: null,
     answers: [1, 2, 3],
   });
+  const [progress, setProgress] = useState(0);
+  const [rightAnwsers, setRightAnswers] = useState(0);
   const tasks = [
     {
       taskName: "Задание 1",
@@ -37,8 +39,24 @@ const TestModal = () => {
       },
     },
   ];
+  const cheatAnswers = {
+    "Калькулятор какой операционной системы изображен на второй странцие?":
+      "iOS",
+    "Как были получены картинки для слайдера?": "С помощью нейросети Кандински",
+    "Какую теслу надо брать?": "Любую",
+  };
 
   const [choosedAnswers, setChoosedAnswers] = useState({});
+
+  const checkAnswers = (cheatAnswers, choosedAnswers) => {
+    let counter = 0;
+    for (let answer of Object.keys(cheatAnswers)) {
+      if (choosedAnswers[answer] === cheatAnswers[answer]) {
+        counter++;
+      }
+    }
+    setRightAnswers(counter);
+  };
 
   return (
     <div className="testModalLayout">
@@ -49,11 +67,14 @@ const TestModal = () => {
           <Questions
             questions={questions}
             choosedAnswers={choosedAnswers}
+            cheatAnswers={cheatAnswers}
             setChoosedAnswers={setChoosedAnswers}
+            setProgress={setProgress}
+            checkAnswers={checkAnswers}
           />
         }
       />
-      <ul>
+      <ul className="tasks">
         {tasks.map((item) => (
           <li
             className="task"
@@ -67,6 +88,9 @@ const TestModal = () => {
           </li>
         ))}
       </ul>
+      <p className="progress">
+        {progress}/{tasks.length} (правильных ответов: {rightAnwsers})
+      </p>
     </div>
   );
 };

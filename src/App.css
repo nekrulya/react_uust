@@ -6,7 +6,7 @@
 
 .App {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(0deg, #00416a 0%, #e4e5e6 100%);
   padding-top: 40px;
 }
@@ -71,7 +71,8 @@
 /* CART */
 .CartLayout {
   margin: 100px auto 0;
-  max-width: 1180px;
+  padding: 0 10px;
+  max-width: 1200px;
   display: flex;
   column-gap: 50px;
 }
@@ -79,7 +80,7 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  max-width: 731px;
+  max-width: 760px;
   column-gap: 30px;
   row-gap: 30px;
 }
@@ -122,7 +123,7 @@
   margin-top: 20px;
 
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 
   color: #000;
   text-align: center;
@@ -217,9 +218,91 @@
 }
 
 /* Tests */
-.answers li {
+.testModalLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tasks {
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.tasks li {
+  cursor: pointer;
+}
+
+.answer {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.question {
+  color: #000;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 input[type="radio"] {
   margin-right: 10px;
+}
+
+.progress {
+  margin-top: 50px;
+  text-align: center;
+
+  color: #4d4d4d;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* About */
+.aboutLayout {
+  margin: 100px auto 0;
+  max-width: 1180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.avatar {
+  height: 500px;
+}
+
+.aboutDescr {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  color: #000;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.social-logo {
+  height: 40px;
 }
