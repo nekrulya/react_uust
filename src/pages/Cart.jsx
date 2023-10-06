@@ -139,6 +139,8 @@ const Cart = () => {
                   </div>
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
