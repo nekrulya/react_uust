@@ -31,6 +31,16 @@ const Navbar = () => {
             Тест
           </Link>
         </li>
+        <li>
+          <Link to="/calendar" className={cl.NavbarLink}>
+            Календарь
+          </Link>
+        </li>
+        <li>
+          <Link to="/carous" className={cl.NavbarLink}>
+            Карусель
+          </Link>
+        </li>
       </ul>
     </nav>
   );
