@@ -38,7 +38,8 @@ const Carous = () => {
 
   useEffect(() => {
     positioning();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function changeAnim(animationMove) {
     if (animationMove) {
