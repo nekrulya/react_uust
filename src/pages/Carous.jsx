@@ -38,7 +38,7 @@ const Carous = () => {
 
   useEffect(() => {
     positioning();
-  }, []);
+  });
 
   function changeAnim(animationMove) {
     if (animationMove) {
@@ -63,6 +63,7 @@ const Carous = () => {
 
   useEffect(() => {
     changeAnim(animationMove);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [animationMove]);
 
   return (
